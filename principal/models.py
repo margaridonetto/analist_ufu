@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 class Post(models.Model):
    STATUS = (
@@ -17,6 +17,8 @@ class Post(models.Model):
    editado = models.DateTimeField(auto_now=True)
    status = models.CharField(max_length=10,choices=STATUS,default='rascunho')
 
+   def get_absolut_url(self):
+      return reverse('detail', args=[self.slug])
 
    class Meta:
       ordering = ('-publicado',)
