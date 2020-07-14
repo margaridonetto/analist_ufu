@@ -3,9 +3,9 @@
 {% block title %} Editar Postagem {% endblock title %}
 
 {% block content %}
-    <h1>Editar Postagem</h1>
+    <h3>Editar Postagem</h3>
     <form action="" method="post"> {% csrf_token %}
-        {{ form.as.p }}
+        {{ form.as_p }}
         <input type="submit" value="Editar">
     </form>
 {% endblock content %}
