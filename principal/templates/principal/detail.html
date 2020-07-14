@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock title %}
+{% block title %} Detalhes {% endblock title %}
 
 {% block content %}
     <div class="post-entry">
         <h2><a href="#">{{ customizado.titulo }}</a></h2>
         <p>{{ customizado.conteudo }}</p>
     </div>
+    <a href="{% url 'edit' customizado.slug %}"  >Editar</a>
+    <a href="{% url 'delete' customizado.slug %}"  >Deletar</a>
 {% endblock content %}
