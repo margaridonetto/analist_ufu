@@ -6,6 +6,30 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.db.models.signals import post_save
 
+class Clientes(models.Model):
+   customer_id = models.CharField(max_length=100)
+   customer_unique_id = models.CharField(max_length=100)
+   customer_zip_code_prefix = models.CharField(max_length=100)
+   customer_city = models.CharField(max_length=100)
+   customer_state = models.CharField(max_length=100)
+
+class Fornecedores(models.Model):
+   seller_id = models.CharField(max_length=100)
+   seller_zip_code_prefix = models.CharField(max_length=100)
+   seller_city = models.CharField(max_length=100)
+   seller_state  = models.CharField(max_length=100)
+
+class Produtos(models.Model):
+   product_id = models.CharField(max_length=100)
+   product_category_name = models.CharField(max_length=100)
+   product_name_lengt = models.CharField(max_length=100)
+   product_description_lengt = models.CharField(max_length=100)
+   product_photos_qty = models.CharField(max_length=100)
+   product_weight_g = models.CharField(max_length=100)
+   product_lengt_cm = models.CharField(max_length=100)
+   product_height_cm = models.CharField(max_length=100)
+   product_width = models.CharField(max_length=100)
+
 class Post(models.Model):
    STATUS = (
       ('rascunho','Rascunho'),

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Clientes {% endblock title %}
+{% block content %}
+    <style>
+    h1 {
+        alignment: center;
+    }
+    #horizontal{
+        display: inline-block;
+    }
+    </style>
+    <center><h1>Clientes</h1></center>
+
+    <div id="horizontal">
+        <div id="item1">
+            <a href="{% url "mapaCalor" %}">Mapa de Calor</a>
+        </div>
+        <div id="item2">
+
+        </div>
+    </div>
+{% endblock content %}

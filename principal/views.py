@@ -4,7 +4,9 @@ from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.edit import CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from . models import Post
+from .models import Post, Clientes
+
+
 # Create your views here.
 
 class BlogListView(ListView):
@@ -35,9 +37,22 @@ class PostDelete(DeleteView):
     model = Post
     template_name = 'principal/delete.html'
     success_url = reverse_lazy("home")
-    success_message = "deletado com sucesso!!"
 
-    '''def delete(self, request, *args, **kwargs):
-        messages.sucess(self.request,self.success_message)
-        success_url = self.get_success_url()
-        return super(PostDelete, self).delete(request, *args, **kwargs)'''
+class Clientes(CreateView):
+    model = Post
+    template_name = 'principal/clientes.html'
+    fields = ('__all__')
+
+class Fornecedores(CreateView):
+    model = Post
+    template_name = 'principal/fornecedores.html'
+    fields = ('__all__')
+
+class Produtos(CreateView):
+    model = Post
+    template_name = 'principal/produtos.html'
+    fields = ('__all__')
+
+class MapaCalor(CreateView):
+    model = Post
+    template_name = 'principal/mapa_clientes.html'
